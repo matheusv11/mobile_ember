@@ -32,7 +32,7 @@ module.exports={
 
     async update(req,res){//Imagem
         const user_id= req.headers.authorization;
-        const {name,email,password}= req.body;
+        const {name,password}= req.body;
 
         const response= await connection('users')
         .where('id', user_id)
