@@ -1,31 +1,23 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from './pages/Home';
-import Profile from './pages/Profile';
+import Tab from './tab.routes'
+import Register from './pages/Register';
 
-//import { Text, View } from 'react-native';
+const Stack= createStackNavigator();
 
-const Tab = createMaterialTopTabNavigator();
 
 const Routes= ()=>{
     return(
-        <SafeAreaProvider>
-            <SafeAreaView style={{flex: 1}}>
-                <NavigationContainer>
+        <Stack.Navigator initialRouteName="Register" screenOptions={{
+            headerShown: false
+        }}>
 
-                    <Tab.Navigator tabBarPosition='bottom'>
-                        <Tab.Screen name="Home" component={Home} />
-                        <Tab.Screen name="Profile" component={Profile} />
-                    </Tab.Navigator>
+            <Stack.Screen name="Home" component={Tab}/>
+            <Stack.Screen name="Register" component={Register} />
 
-                </NavigationContainer>
-            </SafeAreaView>
-      </SafeAreaProvider>
+        </Stack.Navigator>
     )
 }
 export default Routes;
-
 

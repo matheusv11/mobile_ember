@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const Home= ()=>{
+
+
     return(
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home!</Text>
     </View>
     )
