@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-
+//oK
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import Home from './pages/Home';
