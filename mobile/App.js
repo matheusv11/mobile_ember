@@ -12,12 +12,8 @@ export default function App() {
     'segoe-script': require('./src/assets/fonts/segoe-script.ttf')
   });
 
-  if(!fontsLoaded){
-    return <AppLoading />
-  }
-
-  else{
-      
+  if(fontsLoaded){
+        
   return (
 
     // backgroundColor: '#f2f2f2', Alterar o statusBar
@@ -30,6 +26,11 @@ export default function App() {
     </SafeAreaProvider>
     
   );
+  }
+
+  else{
+    return <AppLoading />
+
   }
 
 }

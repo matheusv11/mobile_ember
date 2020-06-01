@@ -13,17 +13,19 @@ const Register= ()=>{
     return(
 
         <View style={styles.container} >
-                
-                <Text style={styles.containerText}>Ember</Text>
-                <TextInput placeholder="email"/>
-                    
+
+            <Text style={styles.containerText}>Ember</Text>
+
+            <TextInput style={styles.input} placeholder="Email"/>
+            <TextInput style={styles.input} placeholder="Senha"/>
               
-                <TouchableOpacity style={styles.button} onPress={gohome}>
-                    <Text style={styles.buttonText}>Registrar</Text>
-                </TouchableOpacity>
-          
+            <TouchableOpacity style={styles.button} onPress={gohome}>
+                <Text style={styles.buttonText}>Logar</Text>
+            </TouchableOpacity>
+            
 
         </View>
+        
     )
 }
 
