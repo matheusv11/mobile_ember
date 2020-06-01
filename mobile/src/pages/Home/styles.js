@@ -12,9 +12,16 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
-        backgroundColor: 'gray'
+        backgroundColor: '#f0044c'
         //So passar background color e tamanho
     },
+
+    headerText: {
+        fontFamily: 'segoe-script',
+        fontSize: 24,
+        color: 'white',
+        
+      },
 
     body:{
        flex: 1,

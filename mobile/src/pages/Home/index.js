@@ -10,9 +10,9 @@ const Home= ()=>{
     return(
       
     <View style={styles.container}>
-      
+
       <View style={styles.header}>
-        <Text>Home!</Text>
+        <Text style={styles.headerText}>Ember</Text>
       </View>
 
       <View style={styles.body}>

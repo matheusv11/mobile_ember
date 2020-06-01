@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button} from 'react-native'
+import { View, Text, Button, TouchableOpacity, TextInput} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles'
 
@@ -13,16 +13,15 @@ const Register= ()=>{
     return(
 
         <View style={styles.container} >
-            <View style={styles.header}>
-                <Text>Ember</Text>
-            </View>
-
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Registro!</Text>
-                <Button title="Oi" onPress={gohome}>
                 
-                </Button>
-            </View>
+                <Text style={styles.containerText}>Ember</Text>
+                <TextInput placeholder="email"/>
+                    
+              
+                <TouchableOpacity style={styles.button} onPress={gohome}>
+                    <Text style={styles.buttonText}>Registrar</Text>
+                </TouchableOpacity>
+          
 
         </View>
     )
