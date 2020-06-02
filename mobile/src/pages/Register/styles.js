@@ -10,6 +10,7 @@ export default StyleSheet.create({
         justifyContent: "center", 
         alignItems: "center" ,
         //alignContent: "center"
+        //Usar align pra sicronizar
 
     },
     

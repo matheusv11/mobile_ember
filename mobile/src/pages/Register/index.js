@@ -8,7 +8,7 @@ const Register= ()=>{
 
     const gohome= ()=>{
         navigation.navigate('Home', {screen: 'Home'})
-    }
+    }//aok
 
     return(
 
