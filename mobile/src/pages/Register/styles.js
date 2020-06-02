@@ -50,6 +50,14 @@ export default StyleSheet.create({
     },
 
 
+    bottom:{
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: 'white'
+    },
+
+
+
 
 
 

@@ -23,6 +23,9 @@ const Register= ()=>{
                 <Text style={styles.buttonText}>Logar</Text>
             </TouchableOpacity>
             
+            <View style={styles.bottom}>
+                <Text>Oi</Text>
+            </View>
 
         </View>
         
