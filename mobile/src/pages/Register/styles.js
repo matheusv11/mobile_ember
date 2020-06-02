@@ -2,15 +2,21 @@ import {StyleSheet } from 'react-native'
 
 
 export default StyleSheet.create({
+
     container:{ 
         flex: 1,
-        paddingHorizontal:  32,
-        //paddingBottom: 20,
         backgroundColor: '#f0044c',
-        justifyContent: "center", 
+
+    },
+
+    body:{
+        // backgroundColor: 'black',
+        // borderRadius: 8,
+        marginTop:"50%",
+        paddingHorizontal:  32,
         alignItems: "center" ,
-        //alignContent: "center"
-        //Usar align pra sicronizar
+        marginBottom: "52%",//Reduzir oq esta abaixo
+
 
     },
     
@@ -35,7 +41,7 @@ export default StyleSheet.create({
     
     button:{
         marginTop: 20,
-        backgroundColor: '#094fe6',
+        backgroundColor: '#2c72e6',
         borderRadius: 6,
         height: 46,
         width: "100%",
@@ -51,9 +57,12 @@ export default StyleSheet.create({
 
 
     bottom:{
-        flexDirection: 'column',
+        // paddingTop: 19,
+        height: 50,
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        width: '100%'
     },
 
 

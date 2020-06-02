@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Header from '../components/header';
+
 import styles from './styles'
 
 
@@ -11,10 +13,8 @@ const Home= ()=>{
       
     <View style={styles.container}>
 
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Ember</Text>
-      </View>
-
+      <Header/>
+      
       <View style={styles.body}>
         <Text>Home!</Text>
       </View>
