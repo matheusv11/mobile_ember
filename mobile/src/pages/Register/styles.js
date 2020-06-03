@@ -12,10 +12,10 @@ export default StyleSheet.create({
     body:{
         // backgroundColor: 'black',
         // borderRadius: 8,
-        marginTop:"45%",
+        marginTop:"30%",
         paddingHorizontal:  32,
         alignItems: "center" ,
-        marginBottom: "40%",//Reduzir oq esta abaixo
+        marginBottom: "20%",//Reduzir oq esta abaixo
 
 
     },
@@ -66,6 +66,21 @@ export default StyleSheet.create({
         width: '100%'
     },
 
+    preview:{
+        width: 122,
+        height: 122,
+        alignContent: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#f2f2f2',
+        marginBottom: 20,
+        borderRadius: 100
+    },
+
+    avatar:{
+        width: 122,
+        height: 122,
+        borderRadius: 100
+    },
 
 
 

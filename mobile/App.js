@@ -4,23 +4,24 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppLoading } from 'expo';
 import Routes from './src/routes';
-import {useFonts} from '@use-expo/font'
+import * as Font from 'expo-font'
+//import {Ionicons, MaterialIcons } from '@expo/vector-icons/'
 
-
-
+const getFonts=()=>{
+  return Font.loadAsync({
+    'segoe-script': require('./src/assets/fonts/segoe-script.ttf'),
+    // ...Ionicons.font,
+    // ...MaterialIcons.font
+  })
+}
 
 export default function App() {
 
-  // const [fontsLoaded, setLoaded]= useState(false);
+  const [fontsLoaded, setLoaded]= useState(false);
 
-  let loadFont= useFonts({
-    'segoe-script': require('./src/assets/fonts/segoe-script.ttf')
-  });
-
-  if(loadFont){
+  if(fontsLoaded){
         
   return (
-
     // backgroundColor: '#f2f2f2', Alterar o statusBar
     <SafeAreaProvider>
       <SafeAreaView style={{flex: 1}}>
@@ -34,7 +35,7 @@ export default function App() {
   }
 
   else{
-    return <AppLoading/>
+    return <AppLoading startAsync={getFonts} onFinish={()=> setLoaded(true)}/>
 
   }
 
