@@ -12,10 +12,10 @@ export default StyleSheet.create({
     body:{
         // backgroundColor: 'black',
         // borderRadius: 8,
-        marginTop:"45%",
+        marginTop:"50%",
         paddingHorizontal:  32,
         alignItems: "center" ,
-        marginBottom: "40%",//Reduzir oq esta abaixo
+        marginBottom: "52%",//Reduzir oq esta abaixo
 
 
     },
@@ -58,10 +58,10 @@ export default StyleSheet.create({
 
     bottom:{
         // paddingTop: 19,
-        flexDirection: 'row',
         height: 50,
+        flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: "center",
         backgroundColor: 'white',
         width: '100%'
     },
