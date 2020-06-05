@@ -22,7 +22,8 @@ module.exports={
 
         const data= await connection('users').insert({
             id,
-            avatar: `http://localhost:3030/files/${req.file.filename}`,
+            //avatar: `http://localhost:3030/files/${req.file.filename}`,
+            avatar: req.file.filename,
             name,
             email,
             password

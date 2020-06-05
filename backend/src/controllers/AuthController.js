@@ -7,13 +7,14 @@ module.exports={
         const response= await connection('users')
         .where('email', email)
         .andWhere('password', password)
-        .select('*')
+        .select('id')
         .first()
 
         if(!response){
             return res.status(401).json({ error: 'User not found' });
         }
+        return res.json(response)
+            // avatar: `http://192.168.1.4:3030/files/${response.avatar}`,
 
-        return res.json(response);
     }
 }

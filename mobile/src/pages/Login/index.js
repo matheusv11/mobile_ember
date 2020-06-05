@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TouchableOpacity, TextInput} from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, AsyncStorage} from 'react-native'
 import { useNavigation, Link } from '@react-navigation/native';
 import styles from './styles'
 import api from '../../services/api'
@@ -17,16 +17,11 @@ const Login= ()=>{
     const Logar= async()=>{
         try{
             await api.post('auth', dados).then(response=>{
-                const {name,email,avatar}= response.data
-                
-                navigation.navigate('Home', {screen: 'Home', params:{
-                    name,
-                    email,
-                    avatar,
-                }})
-                console.log(avatar)
-                
+                const {id}= response.data
+                AsyncStorage.setItem('id', id)
+
             })
+            navigation.navigate('Home', {screen: 'Home'})    
             
         }
         catch{
@@ -35,7 +30,7 @@ const Login= ()=>{
     }
     
 
-
+//Keyboard
     return(
 
         <View style={styles.container} >

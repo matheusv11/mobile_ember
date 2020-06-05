@@ -19,7 +19,7 @@ module.exports={
         if(!response){
             return res.status(401).json({ error: 'User not found' });
         }
-
+        
         await connection('contents').insert({
             title,
             description,

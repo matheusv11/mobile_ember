@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
+//import { useRoute } from '@react-navigation/native';
 
 import Header from '../components/header';
 
@@ -7,16 +8,17 @@ import styles from './styles'
 
 
 const Home= ()=>{
-
+    
+  // const route= useRoute();
 
     return(
       
     <View style={styles.container}>
 
-      <Header/>
+      <Header title="Home"/>
       
       <View style={styles.body}>
-        <Text>Home!</Text>
+        <Text>Oi!</Text>
       </View>
 
     </View>

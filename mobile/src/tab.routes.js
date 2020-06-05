@@ -11,6 +11,7 @@ const Tab_route=()=>{
         <Tab.Navigator tabBarOptions={{
             activeTintColor: 'orange',//Muda o selecionado atual logo se for texto ou icone que herdar ele mostra
             inactiveTintColor: 'grey',
+            
             style: {
                 backgroundColor: '#f2f2f2'
             },
@@ -22,6 +23,7 @@ const Tab_route=()=>{
            
 
         }} 
+        lazy='true'
         initialRouteName="Home" 
         tabBarPosition='bottom'
         >
