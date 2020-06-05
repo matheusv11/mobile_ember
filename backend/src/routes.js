@@ -10,14 +10,13 @@ const UserController= require('./controllers/UserController');
 const ContentController= require('./controllers/ContentController');
 const AuthController= require('./controllers/AuthController');
 const ProfileController= require('./controllers/ProfileController');
-const TesteController= require('./controllers/TesteController')
+
 //Rotas
 
 routes.use('/files', express.static(path.resolve(__dirname, './images')))
-routes.post('/image', multer(multer_config).single('file'), TesteController.create)
 
 routes.get('/users', UserController.index);
-routes.post('/users', UserController.create);
+routes.post('/users', multer(multer_config).single('file'), UserController.create);
 routes.put('/users', UserController.update);
 routes.delete('/users', UserController.delete);
 

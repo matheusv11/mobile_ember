@@ -1,18 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Button, TouchableOpacity, TextInput} from 'react-native'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, Link } from '@react-navigation/native';
 import styles from './styles'
+import api from '../../services/api'
+
 
 const Login= ()=>{
+//Constantes
     const navigation= useNavigation();
+    const [dados,setDados]=useState({
+        email: '',
+        password: ''
+    })
 
-    const goHome= ()=>{
-        navigation.navigate('Home', {screen: 'Home'})
-    }//aok
-
-    const goRegister= ()=> {
-        navigation.navigate('Register');
+//Funcoes
+    const Logar= async()=>{
+        try{
+            await api.post('auth', dados).then(response=>{
+                const {name,email,avatar}= response.data
+                
+                navigation.navigate('Home', {screen: 'Home', params:{
+                    name,
+                    email,
+                    avatar,
+                }})
+                console.log(avatar)
+                
+            })
+            
+        }
+        catch{
+            alert("Dados invalidos")
+        }
     }
+    
+
 
     return(
 
@@ -20,20 +42,21 @@ const Login= ()=>{
             <View style={styles.body}>
                 <Text style={styles.containerText}>Ember</Text>
 
-                <TextInput style={styles.input} placeholder="Email"/>
-                <TextInput style={styles.input} placeholder="Senha"/>
+                <TextInput style={styles.input} onChangeText={email=> setDados({...dados, email: email})} placeholder="Email"/>
+                <TextInput style={styles.input} onChangeText={password=> setDados({...dados, password: password})} placeholder="Senha"/>
                 
-                <TouchableOpacity style={styles.button} onPress={goHome}>
+                <TouchableOpacity style={styles.button} onPress={Logar}>
                     <Text style={styles.buttonText}>Logar</Text>
                 </TouchableOpacity>
+
             </View>
 
             
             <View style={styles.bottom}>
                 <Text>Não é cadastro? </Text>
-                <TouchableOpacity onPress={goRegister}>
+                <Link to="/Register">
                     <Text style={{color: 'blue'}}>Registre-se</Text>
-                </TouchableOpacity>
+                </Link>
             </View>
 
         </View>

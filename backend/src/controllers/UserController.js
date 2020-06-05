@@ -22,12 +22,15 @@ module.exports={
 
         const data= await connection('users').insert({
             id,
+            avatar: `http://localhost:3030/files/${req.file.filename}`,
             name,
             email,
             password
         });
 
-        return res.json(data);
+        //return res.json(data);
+        return res.status(204).send();
+
     },
 
     async update(req,res){//Imagem

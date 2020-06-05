@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
 import { View, Text, TouchableOpacity, TextInput, Image, KeyboardAvoidingView} from 'react-native'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, Link } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';//Retorna todos metodos, funcoes pro ImagePicker
 
 import api from '../../services/api'
@@ -19,9 +19,6 @@ const Register= ()=>{
     })
 
 //Funcoes
-    const goLogin= ()=>{
-        navigation.navigate('Login');
-    }
 
     const Preview= async ()=>{
         const permission = await ImagePicker.requestCameraRollPermissionsAsync();
@@ -55,20 +52,20 @@ const Register= ()=>{
         formData.append('name', dados.name)
         formData.append('email', dados.email)
         formData.append('password', dados.password)
-        console.log(formData)
+        
   
         //IF IMAGEM NULL
 
         try{
-            await api.post('/image', formData,{
+            await api.post('/users', formData,{
                 headers:{'Content-Type': 'multipart/form-data'}
             })
+            navigation.navigate("Login")
         }
         catch{
-            alert('erro')
+            alert('Usuario ja cadastrado')
         }
 
-       
     }
     
 //Retorno
@@ -87,9 +84,9 @@ const Register= ()=>{
                 }
                 </TouchableOpacity>
              
-                <TextInput style={styles.input} placeholder="Nome" onChangeText={name=> setDados({...dados, name: name})}/>
-                <TextInput style={styles.input} placeholder="Email"  onChangeText={email=> setDados({...dados, email: email})}/>
-                <TextInput style={styles.input} placeholder="Senha"  onChangeText={password=> setDados({...dados, password})}/>
+                <TextInput style={styles.input} placeholder="Nome" keyboardType="default" onChangeText={name=> setDados({...dados, name: name})}/>
+                <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" onChangeText={email=> setDados({...dados, email: email})}/>
+                <TextInput style={styles.input} placeholder="Senha" keyboardType="visible-password" onChangeText={password=> setDados({...dados, password})}/>
 
                 
                 <TouchableOpacity style={styles.button} onPress={Register}>
@@ -101,10 +98,10 @@ const Register= ()=>{
 
             <View style={styles.bottom}>
                 <Text>Possui cadastro? </Text>
-
-                <TouchableOpacity onPress={goLogin}>
+                <Link to="/Login">
                     <Text style={{color: 'blue'}}>Faça Login</Text>
-                </TouchableOpacity>
+                </Link>
+     
 
             </View>
 
