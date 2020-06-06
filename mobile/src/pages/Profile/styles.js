@@ -6,6 +6,13 @@ export default StyleSheet.create({
         backgroundColor: '#f2f2f2'
     },
 
+    circular_button: {
+        position: 'absolute',
+        paddingTop: 8,
+        paddingRight: 23,
+        alignSelf:"flex-end"
+    },
+
     user_data:{
         flexDirection:"row",
         alignItems: 'center',
@@ -45,7 +52,7 @@ export default StyleSheet.create({
         flex: 1,
         marginTop: 20,
         paddingHorizontal: 20,
-        alignItems: "center",//Colocar itens no meio o justify coloca no meio da tela
+        //alignItems: "center",//Colocar itens no meio o justify coloca no meio da tela
         //flexDirection: "column"
         //justifyContent: 'flex-end'//Joga la pra baixo
     },
@@ -59,7 +66,6 @@ export default StyleSheet.create({
     content_data_item:{
         marginTop: 24,
         //padding: 40,
-        alignItems: "center",
         width: '100%',
         //height: '35%',
         borderRadius: 30,
@@ -70,19 +76,34 @@ export default StyleSheet.create({
 
     content_data_title:{
         fontSize: 18,
+        alignSelf: "center",
         
     },
 
     content_data_image:{
+        alignSelf: "center",//Se alinhar
         marginTop: 6,
         width: 180,
         height: 110,
+        marginBottom: 12,
         
     },
 
     content_data_description:{
+        fontSize: 12,
+        marginLeft: 20,
+    },
 
-    }
+    content_data_delete:{
+        marginTop: 12,
+        alignSelf: 'center',
+        padding: 10,
+        backgroundColor: 'blue',
+        borderRadius: 14,
+    },
+
+
+    
 
 
 

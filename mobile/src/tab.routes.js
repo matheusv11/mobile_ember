@@ -2,7 +2,7 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import {Ionicons, MaterialIcons } from '@expo/vector-icons/'
+import {Ionicons} from '@expo/vector-icons/'
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -11,7 +11,7 @@ const Tab_route=()=>{
         <Tab.Navigator tabBarOptions={{
             activeTintColor: 'orange',//Muda o selecionado atual logo se for texto ou icone que herdar ele mostra
             inactiveTintColor: 'grey',
-            
+            //Se redimensiona conforme tamanho dos componentes
             style: {
                 backgroundColor: '#f2f2f2'
             },
@@ -37,7 +37,7 @@ const Tab_route=()=>{
 
             <Tab.Screen options={{
                 tabBarIcon: ({color: tintColor})=>(
-                    <MaterialIcons name="settings" size={24} color={tintColor} />
+                    <Ionicons name="ios-person" size={24} color={tintColor} />
                 )
             }} 
             name="Profile" 
