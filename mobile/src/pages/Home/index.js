@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage, TouchableOpacity } from 'react-native';
 //import { useRoute } from '@react-navigation/native';
 
 import Header from '../components/header';
@@ -18,7 +18,9 @@ const Home= ()=>{
       <Header title="Home"/>
       
       <View style={styles.body}>
-        <Text>Oi!</Text>
+        <TouchableOpacity onPress={()=> AsyncStorage.clear()}>
+          <Text>Logout</Text>
+        </TouchableOpacity>
       </View>
 
     </View>

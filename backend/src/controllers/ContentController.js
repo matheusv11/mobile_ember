@@ -23,6 +23,7 @@ module.exports={
         await connection('contents').insert({
             title,
             description,
+            image: req.file.filename,
             user_id
         })
 

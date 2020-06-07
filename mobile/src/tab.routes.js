@@ -1,8 +1,10 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {Ionicons} from '@expo/vector-icons/';
+
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import {Ionicons} from '@expo/vector-icons/'
+
 
 const Tab = createMaterialTopTabNavigator();
 

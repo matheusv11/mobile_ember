@@ -21,7 +21,7 @@ routes.put('/users', UserController.update);
 routes.delete('/users', UserController.delete);
 
 routes.get('/contents', ContentController.index);
-routes.post('/contents', ContentController.create);
+routes.post('/contents', multer(multer_config).single('file'),ContentController.create);
 routes.put('/contents', ContentController.update);
 routes.delete('/contents', ContentController.delete);
 

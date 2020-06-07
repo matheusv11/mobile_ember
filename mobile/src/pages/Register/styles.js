@@ -67,8 +67,8 @@ export default StyleSheet.create({
     },
 
     preview:{
-        width: 122,
-        height: 122,
+        width: 96,
+        height: 96,
         alignContent: 'center',
         justifyContent: 'center',
         backgroundColor: '#f2f2f2',

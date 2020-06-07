@@ -98,9 +98,13 @@ export default StyleSheet.create({
         marginTop: 12,
         alignSelf: 'center',
         padding: 10,
-        backgroundColor: 'blue',
+        backgroundColor: '#f0044c',
         borderRadius: 14,
     },
+
+    content_data_delete_text:{
+        color: 'white'
+    }
 
 
     
