@@ -98,7 +98,7 @@ const Register= ()=>{
 
             <View style={styles.bottom}>
                 <Text>Possui cadastro? </Text>
-                <Link to="/Login">
+                <Link to="/Login" >
                     <Text style={{color: 'blue'}}>Faça Login</Text>
                 </Link>
      
